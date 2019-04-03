@@ -1,3 +1,6 @@
+# add brew zsh autocompletions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # Enable autocompletions
 autoload -Uz compinit
 
@@ -58,6 +61,16 @@ if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
 
   chpwd
 fi
+
+# fasd init
+eval "$(fasd --init auto)"
+
+# pyenv init
+eval "$(pyenv init -)"
+
+# rbenv init
+eval "$(rbenv init -)"
+
 
 # kubectl aliases
 # from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
